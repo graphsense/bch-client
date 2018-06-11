@@ -25,7 +25,7 @@ Make sure your config file includes the following line:
 
 ## Usage
 
-Building the docker container (tagged GitHub version if Bitcoin Cash in `docker/Makefile`):
+Building the docker container (tagged GitHub version of Bitcoin Cash in `docker/Makefile`):
 
     ./docker/build.sh
 
