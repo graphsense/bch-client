@@ -4,4 +4,4 @@ install:
 	git checkout tags/v0.17.2 -b local && \
 	./autogen.sh && \
 	./configure --without-gui --disable-zmq --disable-upnp-default --disable-tests --disable-wallet && \
-	make install;
+	make install
