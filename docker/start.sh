@@ -11,6 +11,7 @@ docker rm bitcoin-cash
 chown -R dockeruser "$1"
 
 docker run --restart=always -d --name bitcoin-cash \
+    --cap-drop all \
     -p 8432:8432 \
     -v "$1":/opt/graphsense/data \
     -it bitcoin-cash
