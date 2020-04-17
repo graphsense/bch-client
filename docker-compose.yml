@@ -1,0 +1,23 @@
+version: "3.5"
+
+services:
+
+  bitcoin-cash-client:
+    image: bitcoin-cash
+    container_name: bitcoin-cash
+    hostname: bitcoin-cash
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./data/:/opt/graphsense/data
+    networks:
+      - graphsense-net
+    ports:
+      - 8432:8432
+    command: ["bitcoind", "-conf=/opt/graphsense/bitcoin.conf", "-datadir=/opt/graphsense/data", "-rest"]
+    restart: always
+
+networks:
+  graphsense-net:
+    name: graphsense-global-net
