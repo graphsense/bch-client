@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Unreleased
 ### Changed
+- Remove deprecated `autotools` build system, replaced by `cmake`
 - Upgrade Alpine Linux base image
 - Add Docker Compose file
 
