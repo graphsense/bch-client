@@ -1,4 +1,4 @@
-FROM alpine:3.11.3
+FROM alpine:3.11
 LABEL maintainer="contact@graphsense.info"
 
 RUN apk --no-cache add make bash boost boost-program_options libevent libressl shadow && \
@@ -10,19 +10,20 @@ ADD docker/bitcoin.conf /opt/graphsense/bitcoin.conf
 ADD docker/Makefile /tmp/Makefile
 
 RUN apk --no-cache --virtual build-dependendencies add \
-        linux-headers \
-        libressl-dev \
-        g++ \
-        boost-dev \
-        file \
         autoconf \
         automake \
-        libtool \
+        binutils \
+        boost-dev \
+        cmake \
+        coreutils \
+        file \
+        grep \
         libevent-dev \
         git \
-        coreutils \
-        binutils \
-        grep && \
+        g++ \
+        linux-headers \
+        libressl-dev \
+        ninja && \
     cd /tmp; make install && \
     rm -rf /tmp/src && \
     strip /usr/local/bin/*bitcoin* && \
