@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [0.4.4] 2020-06-12
+### Changed
+- Updated Bitcoin Cash client to v0.21.8
+
 ## [0.4.3] 2020-05-11
 ### Changed
 - Removed deprecated `autotools` build system, replaced by `cmake`
