@@ -37,6 +37,7 @@ RUN useradd -r -u 10000 dockeruser && \
         libboost-program-options1.71.0 \
         libboost-system1.71.0 \
         libboost-thread1.71.0 \
+        libevent-2.1-7 \
         libevent-pthreads-2.1-7 \
         libminiupnpc17 \
         libssl1.1
