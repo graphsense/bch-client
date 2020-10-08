@@ -45,3 +45,4 @@ RUN useradd -r -u 10000 dockeruser && \
 ADD docker/bitcoin.conf /opt/graphsense/bitcoin.conf
 
 USER dockeruser
+CMD ["bitcoind", "-conf=/opt/graphsense/bitcoin.conf", "-datadir=/opt/graphsense/data", "-rest"]
