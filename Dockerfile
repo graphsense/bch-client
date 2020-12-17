@@ -13,7 +13,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
         ca-certificates \
         git \
         libboost-all-dev \
-        libjemalloc-dev \
         libssl-dev \
         ninja-build \
         python3 \
