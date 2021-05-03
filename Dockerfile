@@ -12,6 +12,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
         build-essential \
         ca-certificates \
         git \
+        help2man \
         libboost-all-dev \
         libssl-dev \
         ninja-build \
