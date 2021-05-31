@@ -1,7 +1,7 @@
 # Bitcoin Cash Docker container
 
-A Docker container running [Bitcoin ABC][bitcoin-abc] as a service and
-exposing the REST API. Bitcoin ABC is a full node implementation of the
+A Docker container running [Bitcoin Cash Node][bitcoin-cash-node] as a service
+and exposing the REST API. Bitcoin Cash Node is a full node implementation of the
 Bitcoin Cash protocol.
 
 ## Prerequisites
@@ -57,6 +57,6 @@ Showing log information:
     docker-compose logs
 
 
-[bitcoin-abc]: https://www.bitcoinabc.org
+[bitcoin-cash-node]: https://bitcoincashnode.org
 [docker]: https://www.docker.com
 [bitcoin-conf]: https://en.bitcoin.it/wiki/Running_Bitcoin#Bitcoin.conf_Configuration_File
