@@ -44,7 +44,5 @@ RUN useradd -r -u $UID dockeruser && \
         libminiupnpc17 \
         libssl1.1
 
-ADD docker/bitcoin.conf /opt/graphsense/bitcoin.conf
-
 USER dockeruser
-CMD ["bitcoind", "-conf=/opt/graphsense/bitcoin.conf", "-datadir=/opt/graphsense/data", "-rest"]
+CMD ["bitcoind", "-conf=/opt/graphsense/client.conf", "-datadir=/opt/graphsense/data", "-rest"]
