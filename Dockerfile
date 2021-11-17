@@ -1,8 +1,6 @@
 FROM ubuntu:20.04 as builder
 LABEL maintainer="contact@graphsense.info"
 
-ARG UID=10000
-
 ENV TZ=UTC
 ADD docker/Makefile /tmp/Makefile
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
@@ -28,6 +26,8 @@ FROM ubuntu:20.04
 
 COPY --from=builder /usr/local/bin/bitcoin* /usr/local/bin/
 
+ARG UID=10000
+
 RUN useradd -r -u $UID dockeruser && \
     mkdir -p /opt/graphsense/data && \
     chown -R dockeruser /opt/graphsense && \
@@ -44,7 +44,5 @@ RUN useradd -r -u $UID dockeruser && \
         libminiupnpc17 \
         libssl1.1
 
-ADD docker/bitcoin.conf /opt/graphsense/bitcoin.conf
-
 USER dockeruser
-CMD ["bitcoind", "-conf=/opt/graphsense/bitcoin.conf", "-datadir=/opt/graphsense/data", "-rest"]
+CMD ["bitcoind", "-conf=/opt/graphsense/client.conf", "-datadir=/opt/graphsense/data", "-rest"]
