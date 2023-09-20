@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [23.09/1.4.1] - 2023-09-20
+### Changed
+- setup automatic docker file publish on github packages
+
 ## [23.09/1.4.0] - 2023-09-20
 ### Changed
 - Updated Bitcoin Cash client to 26.0.0 -> 26.1.0
