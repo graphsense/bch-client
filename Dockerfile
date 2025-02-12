@@ -1,4 +1,4 @@
-FROM ubuntu:20.04 as builder
+FROM ubuntu:24.04 as builder
 LABEL org.opencontainers.image.title="bch-client"
 LABEL org.opencontainers.image.maintainer="contact@ikna.io"
 LABEL org.opencontainers.image.url="https://www.ikna.io/"
@@ -26,7 +26,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
     make install && \
     strip /usr/local/bin/bitcoin*
 
-FROM ubuntu:20.04
+FROM ubuntu:24.04
 
 COPY --from=builder /usr/local/bin/bitcoin* /usr/local/bin/
 
@@ -38,15 +38,12 @@ RUN useradd -r -u $UID dockeruser && \
     # packages
     apt-get update && \
     apt-get install --no-install-recommends -y \
-        libboost-chrono1.71.0 \
-        libboost-filesystem1.71.0 \
-        libboost-program-options1.71.0 \
-        libboost-system1.71.0 \
-        libboost-thread1.71.0 \
-        libevent-2.1-7 \
-        libevent-pthreads-2.1-7 \
+        libboost-all-dev \
+        libfmt9 \
+        libevent-core-2.1-7t64 \
+        libevent-pthreads-2.1-7t64 \
         libminiupnpc17 \
-        libssl1.1
+        libssl-dev
 
 USER dockeruser
 CMD ["bitcoind", "-conf=/opt/graphsense/client.conf", "-datadir=/opt/graphsense/data", "-rest"]
