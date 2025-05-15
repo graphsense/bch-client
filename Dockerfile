@@ -21,6 +21,21 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
         libssl-dev \
         ninja-build \
         python3 \
+        libmpfr-dev \
+        libgmp-dev \
+        libcurl4-openssl-dev \
+        libboost-filesystem-dev \
+        libboost-chrono-dev \
+        libboost-test-dev \
+        libboost-thread-dev \
+        libevent-dev \
+        libminiupnpc-dev \
+        libzmq3-dev \
+        libnatpmp-dev \
+        zlib1g-dev \
+        libdb-dev \
+        libdb++-dev \
+        g++ \
         wget && \
     cd /tmp && \
     make install && \
