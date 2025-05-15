@@ -10,8 +10,8 @@ services:
       context: .
       dockerfile: ./Dockerfile
     volumes:
-      - ./data/:/opt/graphsense/data
-      - ./docker/client.conf:/opt/graphsense/client.conf
+      - ./data/:/opt/graphsense/data:Z
+      - ./docker/client.conf:/opt/graphsense/client.conf:Z
     networks:
       - graphsense-net
     ports:
@@ -20,4 +20,4 @@ services:
 
 networks:
   graphsense-net:
-    name: graphsense-global-net
+    name: graphsense-net

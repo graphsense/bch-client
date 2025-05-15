@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [25.05.1] - 2025-05-15
+### fixed
+- fixed missing runtime dependencies
+
 ## [25.05.0] - 2025-05-15
 ### Changed
 - Updated Bitcoin Cash client to 27.1.0 -> 28.0.1

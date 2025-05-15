@@ -58,7 +58,10 @@ RUN useradd -r -u $UID dockeruser && \
         libevent-core-2.1-7t64 \
         libevent-pthreads-2.1-7t64 \
         libminiupnpc17 \
-        libssl-dev
+        libssl-dev \
+        libgmp-dev \
+        libminiupnpc-dev \
+        libnatpmp-dev
 
 USER dockeruser
 CMD ["bitcoind", "-conf=/opt/graphsense/client.conf", "-datadir=/opt/graphsense/data", "-rest"]
